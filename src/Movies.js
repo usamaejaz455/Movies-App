@@ -9,7 +9,7 @@ const Movies = (props) => {
         className="card-img-top"
         alt="..."
       />
-      <div className="card-body">
+      <div className="card-body" style={{backgroundColor:'gray'}}>
         <h5 className="card-title">Title: {props.title}</h5>
         <p className="card-text"><span style={{ fontWeight: 'bold' }}>Genre:</span> {props.description}...</p>
       </div>
