@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Movies from './Movies';
+import Header from './Header'
+import movies from './movies.json';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container-fluid'>
+    <Header/>
+      <div className='row justify-content-around align-items-center my-2' style={{ height: 'calc(100% - 60px)' }}>
+        {movies.map((element) => (
+          <div className='col-md-4 mb-4 d-flex justify-content-center'>
+            <Movies
+              title={element.Title}
+              description={element.Genre}
+              imgurl={element.Image}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
